@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical_application/Screens/MobileVerificationScreen.dart';
 
 import '../language/Languages.dart';
 
@@ -12,6 +13,8 @@ class DoctorRegistrationScreen extends StatefulWidget{
 
 }
 class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen>{
+  String from  = 'register';
+  String generateOtp  = '1234';
   @override
   Widget build(BuildContext context) {
     return initWidget(context);
@@ -188,20 +191,25 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen>{
                         SizedBox(height: 15,),
                         Padding(
                           padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                          child: Card(
-                            elevation: 8,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Container(
-                              width: 250,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: const Color(0xFF01A9B8)
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MobileVerificationScreen(from, generateOtp)));
+                            },
+                            child: Card(
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
                               ),
-                              child: Center(
-                                child: Text("Register", style: GoogleFonts.comfortaa(color: Colors.white, fontWeight: FontWeight.bold),),
+                              child: Container(
+                                width: 250,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: const Color(0xFF01A9B8)
+                                ),
+                                child: Center(
+                                  child: Text("Register", style: GoogleFonts.comfortaa(color: Colors.white, fontWeight: FontWeight.bold),),
+                                ),
                               ),
                             ),
                           ),
