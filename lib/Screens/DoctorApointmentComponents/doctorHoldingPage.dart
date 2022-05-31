@@ -1,20 +1,24 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical_application/Helper/search_widget.dart';
 import 'package:medical_application/Model/doctorModel.dart';
+import 'package:medical_application/Model/hospitalModel.dart';
+import 'package:medical_application/Screens/HospitalAdmissionComponents/hospitalAdmissionFrom.dart';
 
 import '../../Helper/doctor_data.dart';
+import '../../Helper/hospital_data.dart';
 import '../../language/Languages.dart';
 
-class DoctorSearch extends StatefulWidget{
+class DoctorHolding extends StatefulWidget{
   List<DoctoreModel> doctorList = AllDoctor;
   //List<HospitalModel> hospitalList = AllHospital;
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
-class InitState extends State<DoctorSearch> {
+class InitState extends State<DoctorHolding> {
   String query = '';
   @override
   void initState() {
@@ -30,6 +34,18 @@ class InitState extends State<DoctorSearch> {
 
   Widget initWidget(List<DoctoreModel> doctorList) {
     return Scaffold(
+        appBar:  AppBar(
+          backgroundColor: const Color(0xFF00A6FF),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: Text('Doctor List',
+              style: GoogleFonts.comfortaa(
+                  color: const Color(0xFFFFFFFF),
+                  fontWeight: FontWeight.w900, fontSize: 18)),
+          centerTitle: true,
+        ),
         body: Column(
           children: [
             buildSearch(),
@@ -334,92 +350,92 @@ class InitState extends State<DoctorSearch> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 8, bottom: 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Text('Price',
-                                      style: GoogleFonts.comfortaa(
-                                          color: Color(0xFF01A9B8),
-                                          fontWeight: FontWeight.w900, fontSize: 15)),
-                                ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 8, bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text('Price',
+                                    style: GoogleFonts.comfortaa(
+                                        color: Color(0xFF01A9B8),
+                                        fontWeight: FontWeight.w900, fontSize: 15)),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 18.0),
+                                child: Text('450 bdt',
+                                    style: GoogleFonts.comfortaa(
+                                        color: Color(0xFF01A9B8),
+                                        fontWeight: FontWeight.w900, fontSize: 18)),
                               ),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 18.0),
-                                  child: Text('450 bdt',
-                                      style: GoogleFonts.comfortaa(
-                                          color: Color(0xFF01A9B8),
-                                          fontWeight: FontWeight.w900, fontSize: 18)),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-                                  child: Wrap(
-                                      crossAxisAlignment: WrapCrossAlignment.center,
-                                      children: [
-                                        Icon(Icons.discount_outlined,
-                                            size: 15,
-                                            color: Colors.grey),
-                                        Text(
-                                          'discount ' + '10' + ' %',
-                                          style: GoogleFonts.comfortaa(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w900,
-                                          ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                                child: Wrap(
+                                    crossAxisAlignment: WrapCrossAlignment.center,
+                                    children: [
+                                      Icon(Icons.discount_outlined,
+                                          size: 15,
+                                          color: Colors.grey),
+                                      Text(
+                                        'discount ' + '10' + ' %',
+                                        style: GoogleFonts.comfortaa(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w900,
                                         ),
-                                      ]
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Container(
-                                  width: 150,
-                                  margin: EdgeInsets.only(top: 5.0, bottom: 5.0,),
-                                  padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0, bottom: 8.0),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF01A9B8),
-                                    borderRadius: BorderRadius.circular(20),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 2,
-                                        blurRadius: 2,
-                                        // changes position of shadow
                                       ),
-                                    ],
-                                  ),
-                                  child:  Text(Languages.of(context)!.continueBtn, textAlign: TextAlign.center,style: GoogleFonts.comfortaa(
-                                    color: const Color(0xFFFFFFFF),
-                                    fontWeight: FontWeight.bold,) ),
+                                    ]
                                 ),
                               ),
-                            ],
-                          )
-                        ],
-                      ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Container(
+                                width: 150,
+                                margin: EdgeInsets.only(top: 5.0, bottom: 5.0,),
+                                padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0, bottom: 8.0),
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF01A9B8),
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 2,
+                                      // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child:  Text(Languages.of(context)!.continueBtn, textAlign: TextAlign.center,style: GoogleFonts.comfortaa(
+                                  color: const Color(0xFFFFFFFF),
+                                  fontWeight: FontWeight.bold,) ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
+                  ),
                 ),
               )
             ],

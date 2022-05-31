@@ -3,15 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medical_application/Helper/pharmaceuticals_data.dart';
 import 'package:medical_application/Model/pharmaceuticalsModel.dart';
 import 'package:medical_application/Screens/DoctorApointmentComponents/departmentHoldingPage.dart';
+import 'package:medical_application/Screens/DoctorApointmentComponents/doctorHoldingPage.dart';
 import 'package:medical_application/Screens/DoctorApointmentComponents/hospitalHoldingPage.dart';
 
-class DepartmentSelection extends StatefulWidget {
+class DepartmentHolding extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
-class InitState extends State<DepartmentSelection> {
+class InitState extends State<DepartmentHolding> {
   List<PharmaceuticalModel> pharmaceuticalList = AllPharmaceuticals;
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,20 @@ class InitState extends State<DepartmentSelection> {
   }
 
   Widget initWidget(BuildContext context) {
-    return Scaffold(body:
-    SingleChildScrollView(
+    return Scaffold(
+      appBar:  AppBar(
+        backgroundColor: const Color(0xFF00A6FF),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('Department List',
+            style: GoogleFonts.comfortaa(
+                color: const Color(0xFFFFFFFF),
+                fontWeight: FontWeight.w900, fontSize: 18)),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +46,7 @@ class InitState extends State<DepartmentSelection> {
                       label: pharmaceuticalList[index].name,
                       volume: pharmaceuticalList[index].stock,
                       press: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HospitalHolding()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorHolding()));
 
                       }
                   )

@@ -4,18 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medical_application/Helper/search_widget.dart';
 import 'package:medical_application/Model/hospitalModel.dart';
 import 'package:medical_application/Screens/DoctorApointmentComponents/departmentHoldingPage.dart';
+import 'package:medical_application/Screens/DoctorApointmentComponents/doctorHoldingPage.dart';
 import 'package:medical_application/Screens/DoctorApointmentComponents/hospitalHoldingPage.dart';
 
 import '../../Helper/hospital_data.dart';
 
-class HospitalSearch extends StatefulWidget{
+class HospitalHolding extends StatefulWidget{
   //List<DoctoreModel> doctorList = AllDoctor;
   List<HospitalModel> hospitalList = AllHospital;
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
-class InitState extends State<HospitalSearch> {
+class InitState extends State<HospitalHolding> {
   String query = '';
   @override
   void initState() {
@@ -31,6 +32,18 @@ class InitState extends State<HospitalSearch> {
 
   Widget initWidget(List<HospitalModel> hospitalList) {
     return Scaffold(
+        appBar:  AppBar(
+          backgroundColor: const Color(0xFF00A6FF),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: Text('Hospital List',
+              style: GoogleFonts.comfortaa(
+                  color: const Color(0xFFFFFFFF),
+                  fontWeight: FontWeight.w900, fontSize: 18)),
+          centerTitle: true,
+        ),
         body: Column(
           children: [
             buildSearch(),
@@ -80,7 +93,7 @@ class InitState extends State<HospitalSearch> {
           InkWell(
             onTap: (){
               print(mHospital.name+'///'+mHospital.location);
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DepartmentHolding()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorHolding()));
             },
             child: Card(
                 elevation: 5,
