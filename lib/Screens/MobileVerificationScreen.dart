@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'DoctorHomeScreenComponents/doctorDashBoard.dart';
+
 class MobileVerificationScreen extends StatefulWidget {
   String from, generateOtp;
   MobileVerificationScreen(this.from, this.generateOtp);
@@ -128,22 +130,28 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                         });
                         print('OTP '+ _otp.toString());
                       },
-                      child: Card(
-                        elevation: 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Container(
-                          width: 150,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: const Color(0xFF01A9B8)),
-                          child: Center(
-                            child: Text(
-                              "Verify",
-                              style: GoogleFonts.comfortaa(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
+                      child: InkWell(
+                        onTap: () {
+                          print('clicked verify');
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDashBoard()));
+                        },
+                        child: Card(
+                          elevation: 8,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Container(
+                            width: 150,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: const Color(0xFF01A9B8)),
+                            child: Center(
+                              child: Text(
+                                "Verify",
+                                style: GoogleFonts.comfortaa(
+                                    color: Colors.white, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
