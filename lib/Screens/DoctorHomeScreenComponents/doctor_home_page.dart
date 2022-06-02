@@ -2,17 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical_application/ThemeProvider/theme_provider.dart';
-import 'package:medical_application/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../language/Languages.dart';
 import '../../language/LocalConstant.dart';
-import '../DoctorApointmentComponents/doctor_body.dart';
-import 'doctorDashBoard.dart';
-import '../HomeComponents/body.dart';
+import 'doctor_home_page_body.dart';
 enum PopUpNavMenu {
   SwitchToBangla,
   RateThisApp
@@ -172,23 +168,31 @@ class InitState extends State<DoctorHomePage> {
                       appBar: AppBar(
                         backgroundColor: const Color(0xFF00A6FF),
                         title: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text('Dashboard',
-                              style: GoogleFonts.comfortaa(
-                                  color: const Color(0xFFFFFFFF),
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 18)),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: [
+                              Text('+8801751-330394',
+                                  style: GoogleFonts.comfortaa(
+                                      color: const Color(0xFFFFFFFF),
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 15)),
+                              SizedBox(height: 5,),
+                              Text('Welcome back',
+                                  style: GoogleFonts.comfortaa(
+                                      color: const Color(0xFFFFFFFF),
+                                      fontSize: 12)),
+                            ],
+                          ),
                         ),
                         centerTitle: true,
-                        leading: IconButton(
-                          icon: Image.asset("assets/images/user.png",fit: BoxFit.cover,),
-                          onPressed: (){
+                        leading: GestureDetector(
+                          onTap: (){
                             setState(() {
                               value == 0? value = 1: value = 0;
                               //value == 1? value = 0: value = 1;
                             });
                           },
-                        ),
+                            child: Image.asset('assets/images/user.png')),
                         actions: [
                           ///Darmode option here
                           // IconButton(
@@ -212,7 +216,7 @@ class InitState extends State<DoctorHomePage> {
                           // )
                         ],
                       ),
-                      //body: DoctorDashBoardBody(),
+                      body: DoctorHomePageBody(),
                     ),
                   ),
                 ));

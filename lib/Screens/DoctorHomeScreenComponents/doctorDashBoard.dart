@@ -12,12 +12,6 @@ class DoctorDashBoard extends StatefulWidget{
   State<DoctorDashBoard> createState() => _DoctorDashBoardState();
 }
 class _DoctorDashBoardState extends State<DoctorDashBoard> {
-  List<String> carouselImageList = [
-    'assets/images/b1.jpg',
-    'assets/images/b2.png',
-    'assets/images/b3.jpg',
-    'assets/images/b4.jpg'
-  ];
   int _currentIndex = 0;
   final screens = [
     DoctorHomePage(),
