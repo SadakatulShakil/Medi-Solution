@@ -166,11 +166,7 @@ class InitState extends State<HomeScreen> {
                     child: Scaffold(
                       appBar: AppBar(
                         backgroundColor: const Color(0xFF00A6FF),
-                        title: Text('Dial 4 help',
-                            style: GoogleFonts.comfortaa(
-                                color: const Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w900,
-                                fontSize: 20)),
+                        title: Image.asset("assets/icons/icon.png",fit: BoxFit.cover,),
                         centerTitle: true,
                         leading: IconButton(
                           icon: Image.asset("assets/icons/menu_icon.png",fit: BoxFit.cover,),

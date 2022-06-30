@@ -109,7 +109,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/doc_appointment.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -153,7 +153,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/hospital_admission.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -204,7 +204,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/dLab&pathology.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -261,7 +261,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/ambulance_service.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -312,7 +312,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/pathology.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -363,7 +363,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/training_workshop.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -420,7 +420,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/nurse_attendance.png', width: 50,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -471,7 +471,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/medical_visa.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -528,7 +528,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/pharmacy_shop.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(
@@ -579,7 +579,7 @@ class _DashBoardOptionState extends State<DashBoardOption>{
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Image.asset('assets/images/service.png', width: 40,height: 40,),
+                              child: Image.asset('assets/icons/one_stop.png', width: 40,height: 40,),
                             ),
                             SizedBox(height: 5,),
                             Padding(

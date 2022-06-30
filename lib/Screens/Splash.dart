@@ -38,17 +38,23 @@ class InitState extends State<Splash> {
 
   Widget initWidget() {
     return Scaffold(
-      backgroundColor: Color(0xFF00A6FF),
+      backgroundColor: Color(0xFFFFFFFF),
       body: Stack(
         children: [
           Center(
             child: Container(
-              margin:  EdgeInsets.only(bottom: 100.0),
-              child: Image.asset("assets/images/splash_screen.JPG", width: 200, height: 200),
+              margin:  EdgeInsets.only(bottom: 130.0),
+              child: Image.asset("assets/icons/splash_icon.png", width: 200, height: 200),
+            ),
+          ),
+          Center(
+            child: Container(
+              margin:  const EdgeInsets.only(top: 130.0),
+              child: Image.asset("assets/icons/icon.png", width: 350, height: 300),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 40.0),
+            margin: EdgeInsets.only(bottom: 20.0),
             child: Stack(
               children: [
                 Align(
@@ -56,25 +62,13 @@ class InitState extends State<Splash> {
                   child: JumpingDotsProgressIndicator(
                     fontSize: 50.0,
                     numberOfDots: 5,
-                    color: new Color(0xFFFFFFFF),
+                    color: new Color(0xFF00A6FF),
                     milliseconds: 120,
                   ),
                 )
               ],
             ),
           ),
-          // Container(
-          //   margin:  EdgeInsets.only(bottom: 10.0),
-          //   child: Stack(
-          //     children: [
-          //       Align(
-          //         alignment: Alignment.bottomCenter,
-          //         child: Text('কারিগরি সহায়তায় adn diginet', style: GoogleFonts.comfortaa(color: const Color(0xFF01A9B8))),
-          //       )
-          //     ],
-          //   ),
-          // )
-
         ],
       ),
     );
